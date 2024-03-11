@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Alışveriş Listesi
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cikis()">
+        <ion-icon slot="end" name="exit"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item *ngFor="let urun of urunler" (click)="detayGoster(urun)">
+      <ion-label>{{urun.ad}} - {{urun.adet}} </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAlert()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+ 
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><span *ngIf="urun">{{urun!.ad}}</span></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="kapat()">
+       <ion-icon slot="end" name="close-outline"></ion-icon>
+      Kapat
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="urun">
+  <ion-input type="text" [(ngModel)]="urun!.ad" label="Ürün"></ion-input>
+  <ion-input type="number" [(ngModel)]="urun!.adet" label="Adet"></ion-input>
+</div>
+
+<ion-button (click)="urunGuncelle()" expand="full" color="success">
+  <ion-icon slot="start" name="save"></ion-icon>
+ Güncelle
+</ion-button>
+
+<ion-button (click)="sil()" expand="full" color="danger">
+  <ion-icon slot="start" name="trash"></ion-icon>
+  Sil
+</ion-button>
+</ion-content>
